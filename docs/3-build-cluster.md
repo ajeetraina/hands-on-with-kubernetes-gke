@@ -129,6 +129,28 @@ Navigate to the "Workloads" section in the Kubernetes Dashboard you previously o
 
 ![Imgur](http://i.imgur.com/j8oVACv.png)
 
+## 6. Connecting to Pods
+
+Try connecting to one of Pod. It's quite simple - 
+
+```
+kubectl get po
+NAME                           READY     STATUS    RESTARTS   AGE
+hello-world-85f98cf8c9-97ld5   1/1       Running   0          6m
+hello-world-85f98cf8c9-c79cc   1/1       Running   0          6m
+hello-world-85f98cf8c9-fbbxw   1/1       Running   0          6m
+hello-world-85f98cf8c9-gq4gm   1/1       Running   0          6m
+hello-world-85f98cf8c9-hkbwc   1/1       Running   0          6m
+```
+
+```
+kubectl exec -t hello-world-85f98cf8c9-c79cc date
+Sun Apr  8 02:52:52 UTC 2018
+
+kubectl exec -t hello-world-85f98cf8c9-c79cc cat /etc/issue
+Debian GNU/Linux 8 \n \l
+```
+
 ## 6. Tour of Dashboard (the official UI of Kubernetes)
 
 Instructor will give a tour of the Kubernetes Dashboard and cover the constructs of Kubernetes. 
